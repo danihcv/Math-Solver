@@ -23,7 +23,7 @@ class Expression:
         string += "\tVariables: " + str(self.variables)
         return string
 
-    def solve2degree(a, b, c):
+    def solve2degree(self, a, b, c):
         delta = b**2 - 4 * a * c
         if (delta < 0): return(None, None)
         x1 = (-b + delta**(1/2)) / (2 * a)
