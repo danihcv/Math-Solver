@@ -2,11 +2,12 @@
 from Expression import Expression
 import re
 
-# a^2-b^2
-# rule1 = ['a','^','2','-','b','^','2']
-# rule2 = ['a','^','2','-','a','b','^','2']
-
+################# Regex elements #################
+decomposedNumber = r'\([0-9]+(\^\([0-9]+(\*[0-9]+)*\))?(\*[0-9]+(\^\([0-9]+(\*[0-9]+)*\))?)*\)'
+##################################################
 regexFiles = [
+    ('quadrado-da-soma.txt', 'QS'),
+    ('quadrado-da-diferenca.txt', 'QD'),
     ('produto-da-soma-pela-diferenca.txt', 'PSD'),
     ('equacao-do-segundo-grau', 'ESG')
 ]
