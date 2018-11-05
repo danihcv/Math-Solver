@@ -1,5 +1,5 @@
 # coding=utf-8
-from Expression import Expression
+from Expression import Expression, is_balanced
 import re
 
 ################# Regex elements #################
@@ -25,10 +25,10 @@ for rule in rules:
 print("\n- Expressions:")
 while True:
     text = str(input())
-    print(text)
     if text.upper() == 'END': break
     expression = Expression(text)
-    print(expression)
+    # print(expression)
+    print(is_balanced(expression.text))
 
     for rule in rules:
         if re.match(rule[0], expression.text):

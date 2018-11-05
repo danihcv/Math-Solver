@@ -1,6 +1,7 @@
 import re
 
 regexOperators = r'[-+*^/]'
+regexElements = r'[+\-*()]|[A-Za-z]|[0-9]+'
 
 
 class Expression:
@@ -29,3 +30,23 @@ class Expression:
         x1 = (-b + delta**(1/2)) / (2 * a)
         x2 = (-b - delta**(1/2)) / (2 * a)
         return(x1, x2)
+
+def formTree(expr):
+    elements = re.findall(regexElements, expr)
+    # print(elements)
+
+def is_balanced(expr):
+    stack = []
+    elements = re.findall(r'[()]', expr)
+    print(elements)
+
+    for el in elements:
+        print('>>>>' + str(el == '('))
+        if el == '(':
+            stack.append('(')
+        else:
+            if len(stack) == 0:
+                return False
+            stack.pop()
+
+    return len(stack) == 0
