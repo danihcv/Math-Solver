@@ -30,6 +30,7 @@ while True:
     expression = None
     try:
         expression = Expression(text)
+        print(expression)
     except Exception:
         print("\t- Unbalanced parentheses!!!")
         continue
